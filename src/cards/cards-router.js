@@ -6,8 +6,7 @@ const { requireAuth } = require("../middleware/jwt-auth");
 const cardsRouter = express.Router();
 const jsonBodyParser = express.json();
 
-
-//get all cards no login required
+//get all cards no login required.
 cardsRouter.route("/").get((req, res, next) => {
   cardsService
     .getAllCards(req.app.get("db"))
@@ -30,7 +29,6 @@ cardsRouter
       .catch(next);
   });
 
-
 //favorite the current card and put in the my cards section
 cardsRouter
   .route("/fav/:card_id")
@@ -41,8 +39,8 @@ cardsRouter
     if (numberOfValues === 0) {
       return res.status(400).json({
         error: {
-          message: `must mark as a favorite`
-        }
+          message: `must mark as a favorite`,
+        },
       });
     }
 
@@ -55,7 +53,5 @@ cardsRouter
       })
       .catch(next);
   });
-
-
 
 module.exports = cardsRouter;
