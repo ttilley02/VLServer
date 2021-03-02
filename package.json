@@ -29,7 +29,6 @@
     "morgan": "^1.10.0",
     "pg": "^8.2.1",
     "treeize": "^2.1.2",
-    "postgrator-cli": "^3.2.0",
     "xss": "^1.0.3"
   },
   "devDependencies": {
