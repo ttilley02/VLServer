@@ -10,6 +10,7 @@ cardsRouter.route("/").get((req, res, next) => {
   cardsService
     .getAllCards(req.app.get("db"))
     .then((cards) => {
+      console.log("yuiyiuiyui");
       res.json(cards);
     })
     .catch(next);
