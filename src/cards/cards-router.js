@@ -1,5 +1,4 @@
 const express = require("express");
-const path = require("path");
 const cardsService = require("./cards-service");
 const { requireAuth } = require("../middleware/jwt-auth");
 
