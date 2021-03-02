@@ -13,7 +13,7 @@ const app = express();
 
 app.use(
   morgan(NODE_ENV === "production" ? "tiny" : "common", {
-    skip: () => NODE_ENV === "test"
+    skip: () => NODE_ENV === "test",
   })
 );
 app.use(cors());
@@ -29,7 +29,7 @@ app.use("/api/users", usersRouter);
 app.use(function errorHandler(error, req, res, next) {
   let response;
   if (NODE_ENV === "production") {
-    response = { error: { message: "server error" } };
+    response = { error: { message: "server errorppp" } };
   } else {
     console.error(error);
     response = { message: error.message, error };
