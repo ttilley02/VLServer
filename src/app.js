@@ -19,8 +19,6 @@ app.use(
 app.use(cors());
 app.use(helmet());
 
-app.use(express.json());
-
 app.use("/api/cards", cardsRouter);
 app.use("/api/notes", notesRouter);
 app.use("/api/auth", authRouter);
@@ -29,10 +27,10 @@ app.use("/api/users", usersRouter);
 app.use(function errorHandler(error, req, res, next) {
   let response;
   if (NODE_ENV === "production") {
-    response = { error: { message: "server errorppp" } };
+    response = { error: "Server error" };
   } else {
     console.error(error);
-    response = { message: error.message, error };
+    response = { error: error.message, object: error };
   }
   res.status(500).json(response);
 });
